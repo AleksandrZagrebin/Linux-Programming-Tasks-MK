@@ -1,3 +1,15 @@
+//-----------------------------------------------------------------------------
+//
+// Exercises 4.1 The-Linux-Programming-Interface-Michael-Kerrisk
+// try:
+// > gcc -o tee 4-1.c 
+// > ./tee 1.txt
+// > ./tee 1.txt -a
+// > ./tee 1.txt --help
+//
+// optional for compilation: -DDEBUG, -DBUF_SIZE
+//-----------------------------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
