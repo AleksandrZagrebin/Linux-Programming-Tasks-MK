@@ -6,7 +6,7 @@
 // > ./cp 1.txt 2.txt
 // > ./cp --help
 //
-// optional for compilation: -DDEBUG, -DBUF_SIZE
+// optional for compilation: -DDEBUG
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
