@@ -5,7 +5,7 @@
 // > gcc -o tee 4-1.c 
 // > ./tee 1.txt
 // > ./tee 1.txt -a
-// > ./tee 1.txt --help
+// > ./tee --help
 //
 // optional for compilation: -DDEBUG, -DBUF_SIZE
 //-----------------------------------------------------------------------------
