@@ -36,7 +36,7 @@ int main(int argc, char **argv)
             exit(EXIT_FAILURE);
         }
 #ifdef DEBUG
-        fprintf(stderr, "Create/open file %s\n", argv[1]);
+        printf("Create/open file %s\n", argv[1]);
 #endif
     }
     else if (strcmp(argv[2], "-a") == 0)
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
             exit(EXIT_FAILURE);
         }
 #ifdef DEBUG
-        fprintf(stderr, "Append to file %s\n", argv[1]);
+        printf("Append to file %s\n", argv[1]);
 #endif
     }
     else
