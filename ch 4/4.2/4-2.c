@@ -19,19 +19,17 @@ int main(int argc, char **argv)
     struct stat st;
     off_t size, pos, data, hole, p;
     ssize_t off;
-
-    if (argc != 3)
-    {
-        fprintf(stderr, "Usage: %s src dst\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
-
+    
     if (strcmp(argv[1], "--help") == 0)
     {
         fprintf(stdout, "Usage: %s src dst\n", argv[0]);
         exit(EXIT_SUCCESS);
     }
-
+    if (argc != 3)
+    {
+        fprintf(stderr, "Usage: %s src dst\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
     srcFd = open(argv[1], O_RDONLY);
     if (srcFd == -1)
     {
@@ -53,8 +51,7 @@ int main(int argc, char **argv)
     }
 
 #ifdef DEBUG
-    fprintf(stderr, "Copy %s -> %s (size %" PRIdMAX ")\n",
-            argv[1], argv[2], (intmax_t)st.st_size);
+    printf("Copy %s -> %s (size %" PRIdMAX ")\n", argv[1], argv[2], (intmax_t)st.st_size);
 #endif
 
     size = st.st_size;
@@ -69,8 +66,7 @@ int main(int argc, char **argv)
             if (errno == ENXIO)
             {
 #ifdef DEBUG
-                fprintf(stderr, "Hole [%" PRIdMAX ", %" PRIdMAX ")\n",
-                        (intmax_t)pos, (intmax_t)size);
+                printf("Hole [%" PRIdMAX ", %" PRIdMAX ")\n", (intmax_t)pos, (intmax_t)size);
 #endif
                 break;
             }
@@ -80,8 +76,7 @@ int main(int argc, char **argv)
 
 #ifdef DEBUG
         if (data > pos)
-            fprintf(stderr, "Hole [%" PRIdMAX ", %" PRIdMAX ")\n",
-                    (intmax_t)pos, (intmax_t)data);
+            printf("Hole [%" PRIdMAX ", %" PRIdMAX ")\n", (intmax_t)pos, (intmax_t)data);
 #endif
 
         errno = 0;
@@ -93,8 +88,7 @@ int main(int argc, char **argv)
         }
 
 #ifdef DEBUG
-        fprintf(stderr, "Data [%" PRIdMAX ", %" PRIdMAX ")\n",
-                (intmax_t)data, (intmax_t)hole);
+        printf("Data [%" PRIdMAX ", %" PRIdMAX ")\n", (intmax_t)data, (intmax_t)hole);
 #endif
 
         if (lseek(srcFd, data, SEEK_SET) < 0)
