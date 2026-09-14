@@ -2,13 +2,12 @@
 //
 // Exercises 5.3 The-Linux-Programming-Interface-Michael-Kerrisk
 // try:
-// > gcc 4-2.c -D_GNU_SOURCE -o cp 
-// > ./cp 1.txt 2.txt
-// > ./cp --help
+// > gcc 5-3.c -o atomic_append
+// > ./atomic_append 1.txt 1000000
+// > ./atomic_append 1.txt 1000000 x
 //
-// optional for compilation: -DDEBUG
+// optional for compilation: -DDEBUG -DBYTE(for determine char)
 //-----------------------------------------------------------------------------
-
 
 
 #include <stdio.h>
