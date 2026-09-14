@@ -2,7 +2,7 @@
 //
 // Exercises 4.2 The-Linux-Programming-Interface-Michael-Kerrisk
 // try:
-// > gcc linuxapi-4-2.c -D_GNU_SOURCE -o cp 
+// > gcc 4-2.c -D_GNU_SOURCE -o cp 
 // > ./cp 1.txt 2.txt
 // > ./cp --help
 //
