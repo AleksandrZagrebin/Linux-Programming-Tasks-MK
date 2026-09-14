@@ -1,3 +1,12 @@
+//-----------------------------------------------------------------------------
+//
+// Exercises 5.5 The-Linux-Programming-Interface-Michael-Kerrisk
+// try:
+// > gcc 5-5.c -o test
+// > ./test 1.txt
+//
+//-----------------------------------------------------------------------------
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <fcntl.h>
