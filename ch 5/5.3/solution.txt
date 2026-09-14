@@ -1,0 +1,5 @@
+Перед запуском процессов(см. 5-3-task) нужно создать два файла
+> touch 1.txt 2.txt
+запуск программ
+> ./atomic_append 1.txt 1000000 & ./atomic_append 1.txt 1000000
+> ./atomic_append 2.txt 1000000 x & ./atomic_append 2.txt 1000000 x
